@@ -14,9 +14,6 @@ class Coins : MonySlot{
     override func Validate(Money:String) -> Bool {
         if(Money == "10c"){
             super.setBalance(Money: super.getBalance()+0.1)
-            print("\(super.getBalance())")
-            print(".....")
-            print("\(MyVendingMachine.shared.getTotalBalance())")
             check=true
         }
         else if(Money == "20c"){

@@ -13,9 +13,13 @@ class Keypad{
    private var myNumber : Int = 0
     
     public func setNumber ( itemNumber:Int){
+        if(itemNumber > 0 && itemNumber <= 25){
       myNumber = itemNumber
         MyVendingMachine.shared.setChosenItem(Number: myNumber)
-        print("\(MyVendingMachine.shared.getChosenItem())")
+        }
+        else{
+            Exeptions.shared.notValidSnack()
+        }
         
     }
     public func getNumber () -> Int{

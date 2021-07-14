@@ -7,27 +7,50 @@
 
 import XCTest
 @testable import MyVendingMachine
-
 class MyVendingMachineTests: XCTestCase {
-
+    var sut: MyVendingMachine!
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = MyVendingMachine()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSettingTotalBalance() throws {
+        let balance = -1.0
+
+        // when
+        sut.setTotalBalance(balance: balance)
+
+        // then
+        XCTAssertEqual(sut.testBalance, false)
+    }
+    
+    func testItemPriceWithNegative() throws {
+        let item = -1
+        XCTAssertEqual(sut.getitemPrice(item: item), 0.0)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testItemPriceWithZero() throws {
+        let item = 0
+        XCTAssertEqual(sut.getitemPrice(item: item), 0.0)
+    }
+    
+    func testItemPriceWithHighValue() throws {
+        let item = 70
+        XCTAssertEqual(sut.getitemPrice(item: item), 0.0)
+    }
+    
+    func testCalculateChange() throws {
+        let price = 7.0
+        let balance = 8.0
+      
+        sut.calculateChange(Balance: balance, Price: price)
+        
+        XCTAssertEqual(sut.getChange(), 1.0)
     }
 
 }

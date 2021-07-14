@@ -21,5 +21,8 @@ class Exeptions{
     public func noChange(){
         print("No Change")
     }
+    public func notValidSnack(){
+        print("This Snack Number is not valid")
+    }
     
 }

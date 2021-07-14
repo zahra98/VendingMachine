@@ -15,7 +15,7 @@ class MyVendingMachine:NSObject{
     private var totalPrice : Double=0.0
     private var Change : Double = 0.0
     private var chosenItem : Int = 0
-    
+    var testBalance : Bool = true
     public func setChosenItem (Number:Int){
         chosenItem = Number
     }
@@ -25,14 +25,26 @@ class MyVendingMachine:NSObject{
     
     
     public func setTotalBalance (balance:Double){
+        if(balance>0){
         totalBalance = balance
+        }
+        else{
+            testBalance = false
+            print("invaled Balance")
+        }
     }
     public func getTotalBalance ()-> Double{
         return totalBalance
     }
     
     public func getitemPrice(item:Int)->Double{
+        if(item > 0 && item <= 25){
         return prices[item+1]
+        }
+        else{
+            Exeptions.shared.notValidSnack()
+            return 0.0
+        }
     }
     
     
