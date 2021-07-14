@@ -20,6 +20,7 @@
 		04EC28A5269EFD8C006B0326 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC28A4269EFD8C006B0326 /* Coins.swift */; };
 		04EC28AA269EFD9D006B0326 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC28A9269EFD9D006B0326 /* Notes.swift */; };
 		04EC28AF269EFDAC006B0326 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC28AE269EFDAC006B0326 /* Cards.swift */; };
+		04EC28B4269F6CFF006B0326 /* Exeptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC28B3269F6CFF006B0326 /* Exeptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		04EC28A4269EFD8C006B0326 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		04EC28A9269EFD9D006B0326 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		04EC28AE269EFDAC006B0326 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		04EC28B3269F6CFF006B0326 /* Exeptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exeptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				04EC28A4269EFD8C006B0326 /* Coins.swift */,
 				04EC28A9269EFD9D006B0326 /* Notes.swift */,
 				04EC28AE269EFDAC006B0326 /* Cards.swift */,
+				04EC28B3269F6CFF006B0326 /* Exeptions.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				04EC28A5269EFD8C006B0326 /* Coins.swift in Sources */,
 				04EC2896269EEAD8006B0326 /* MonySlot.swift in Sources */,
 				048B1D0D269EC49D00336482 /* MyVendingMachineApp.swift in Sources */,
+				04EC28B4269F6CFF006B0326 /* Exeptions.swift in Sources */,
 				04EC28A0269EFC44006B0326 /* Keypad.swift in Sources */,
 				04EC28AA269EFD9D006B0326 /* Notes.swift in Sources */,
 			);

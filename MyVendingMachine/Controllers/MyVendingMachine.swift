@@ -9,53 +9,58 @@ import Foundation
 import UIKit
 
 class MyVendingMachine:NSObject{
+    static let shared = MyVendingMachine()
+    let prices = [1, 3, 5, 2,3, 4, 3, 5,4,2,1, 3, 5, 2,3, 4, 3, 5,4,2,1,0.5,1,1,1]
+    private var totalBalance : Double=0.0
+    private var totalPrice : Double=0.0
+    private var Change : Double = 0.0
+    private var chosenItem : Int = 0
     
-    var myMoneySlot :MonySlot?
-    var mySnackSlot:SnackSlot?
-    var myKeypad:Keypad?
-    private var totalBalance : Double?
-    private var totalPrice : Double?
-    private var Change : Double?
-    private var chosenItem : Int?
-    
-    public func setChosenItem (){
-        chosenItem = myKeypad?.getNumber()
+    public func setChosenItem (Number:Int){
+        chosenItem = Number
     }
     public func getChosenItem ()-> Int{
-        return chosenItem!
+        return chosenItem
     }
     
-    public func setTotalBalance (){
-        totalBalance = myMoneySlot?.getBalance()
+    
+    public func setTotalBalance (balance:Double){
+        totalBalance = balance
     }
     public func getTotalBalance ()-> Double{
-        return totalBalance!
+        return totalBalance
     }
     
-    public func setTotalPrice (){
-        totalPrice = mySnackSlot?.getitemPrice(itemNumber: getChosenItem())
-    }
-    public func getTotalPrice ()-> Double{
-        return totalPrice!
+    public func getitemPrice(item:Int)->Double{
+        return prices[item+1]
     }
     
-    public func setChange (){
-       let inputMoney:Double = getTotalBalance()
-       let price : Double = getTotalPrice()
-        let deffirence : Double  = inputMoney - price
+    
+    
+    public func calculateChange (Balance:Double,Price:Double){
+        let deffirence : Double  = Balance - Price
         if(deffirence == 0){
             //no change
+            Exeptions.shared.noChange()
         }
         else if(deffirence > 0){
             // change is deff
-            Change = deffirence
+         
+            setChange(change: deffirence)
         }
         else {
             //not enough Money exception
+            Exeptions.shared.notEnoughMoney()
         }
     }
-    public func getChange ()-> Double{
-        return Change!
+    
+    public func setChange (change:Double){
+       Change = change
     }
+    public func getChange ()-> Double{
+        return Change
+    }
+    
+    
     
 }

@@ -9,15 +9,34 @@ import Foundation
 import UIKit
 
 class Coins : MonySlot{
-    override func Validate() -> Bool {
-        <#code#>
+    var check:Bool = true
+    static let shared = Coins()
+    override func Validate(Money:String) -> Bool {
+        if(Money == "10c"){
+            super.setBalance(Money: super.getBalance()+0.1)
+            print("\(super.getBalance())")
+            print(".....")
+            print("\(MyVendingMachine.shared.getTotalBalance())")
+            check=true
+        }
+        else if(Money == "20c"){
+            super.setBalance(Money: super.getBalance()+0.2)
+            check=true
+        }
+        else if(Money == "50c"){
+            super.setBalance(Money: super.getBalance()+0.5)
+            check=true
+        }
+        else if(Money == "1$"){
+            super.setBalance(Money: super.getBalance()+1)//all calculation will be based on dollars not cents
+            check=true
+        }
+        else{
+            check=false
+            Exeptions.shared.notvalid()
+        }
+        return check
     }
     
-//   public var itemNumber : Int = 0
-//    public var itemPrice : Double = 0.0
-//
-//    public func getitemPrice ( itemNumber:Int) -> Double{
-//        return itemPrice
-//    }
     
 }
