@@ -15,5 +15,8 @@ class SnackSlot{
     public func getitemPrice ( itemNumber:Int) -> Double{
         return itemPrice
     }
+    public func setitemPrice ( itemNumber:Int,Price:Double) {
+        itemPrice = Price
+    }
     
 }

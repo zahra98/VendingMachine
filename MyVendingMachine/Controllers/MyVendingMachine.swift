@@ -47,7 +47,7 @@ class MyVendingMachine:NSObject{
         }
     }
     
-    
+
     
     public func calculateChange (Balance:Double,Price:Double){
         let deffirence : Double  = Balance - Price
